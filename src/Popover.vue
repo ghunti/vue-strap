@@ -1,12 +1,14 @@
 <template>
-  <span ref="trigger">
-    <slot></slot>
+  <div>
+    <span ref="trigger">
+      <slot></slot>
+    </span>
     <div ref="popover" v-if="show" :class="['popover',placement]" :transition="effect">
       <div class="arrow"></div>
       <h3 class="popover-title" v-if="title"><slot name="title">{{title}}</slot></h3>
       <div class="popover-content"><slot name="content"><span v-html="content"></span></slot></div>
     </div>
-  </span>
+  </div>
 </template>
 
 <script>
